@@ -1,6 +1,8 @@
 # 3500 PA05 "Winston Ate My Bullet Journal" 
 Version 1.0.0
 
+Collaborators: [AveragelyIntelligentBird](https://github.com/AveragelyIntelligentBird) and [totokang](https://github.com/totokang)
+
 This is a simple Bullet Journal application. It allows viewing and editing of a weekly agenda,
 along with the ability to create events and tasks. It also has a taskbar that allows for quick
 creation of tasks and events. You can also save the week in a .bujo file, which can be read later.
