@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Scene?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+
+<Scene xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <AnchorPane prefHeight="437.0" prefWidth="395.0" style="-fx-background-color: #F6EEE3;">
+      <children>
+         <BorderPane prefHeight="440.0" prefWidth="440.0">
+            <center>
+               <GridPane BorderPane.alignment="CENTER">
+                 <columnConstraints>
+                   <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="134.39996337890625" minWidth="10.0" prefWidth="134.39996337890625" />
+                     <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="120.20001220703122" minWidth="8.799980163574219" prefWidth="18.5" />
+                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="267.0" minWidth="10.0" prefWidth="267.0" />
+                 </columnConstraints>
+                 <rowConstraints>
+                   <RowConstraints maxHeight="55.0" minHeight="7.19999065399171" prefHeight="10.0" vgrow="SOMETIMES" />
+                   <RowConstraints maxHeight="55.0" minHeight="6.400003814697264" prefHeight="10.0" vgrow="SOMETIMES" />
+                   <RowConstraints maxHeight="55.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                     <RowConstraints maxHeight="55.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                 </rowConstraints>
+                  <children>
+                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Event Name: ">
+                        <font>
+                           <Font name="Niramit Regular" size="18.0" />
+                        </font>
+                     </Text>
+                     <StackPane alignment="CENTER_LEFT" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="2">
+                        <children>
+                           <TextField fx:id="eventNameField" prefHeight="27.0" prefWidth="142.0">
+                              <font>
+                                 <Font name="Niramit Regular" size="13.0" />
+                              </font>
+                           </TextField>
+                           <Label fx:id="eventNameView" text="Label">
+                              <font>
+                                 <Font name="Niramit Regular" size="18.0" />
+                              </font>
+                           </Label>
+                        </children>
+                     </StackPane>
+                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Day of Week: " GridPane.rowIndex="1">
+                        <font>
+                           <Font name="Niramit Regular" size="18.0" />
+                        </font>
+                     </Text>
+                     <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="1">
+                        <children>
+                           <SplitMenuButton fx:id="eventDayMenu" mnemonicParsing="false" prefHeight="31.0" prefWidth="166.0" text="Choose..." StackPane.alignment="CENTER_LEFT">
+                             <items>
+                                <MenuItem fx:id="eventDaySunday" mnemonicParsing="false" text="Sunday" />
+                                <MenuItem fx:id="eventDayMonday" mnemonicParsing="false" text="Monday" />
+                                <MenuItem fx:id="eventDayTuesday" mnemonicParsing="false" text="Tuesday" />
+                                <MenuItem fx:id="eventDayWednesday" mnemonicParsing="false" text="Wednesday" />
+                                <MenuItem fx:id="eventDayThursday" mnemonicParsing="false" text="Thursday" />
+                                <MenuItem fx:id="eventDayFriday" mnemonicParsing="false" text="Friday" />
+                                <MenuItem fx:id="eventDaySaturday" mnemonicParsing="false" text="Saturday" />
+      
+                                         </items>
+                              <font>
+                                 <Font name="Niramit Regular" size="14.0" />
+                              </font>
+                           </SplitMenuButton>
+                           <Label fx:id="eventDayView" text="Label" StackPane.alignment="CENTER_LEFT">
+                              <font>
+                                 <Font name="Niramit Regular" size="18.0" />
+                              </font>
+                           </Label>
+                        </children>
+                     </StackPane>
+                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Start Time: " GridPane.rowIndex="2">
+                        <font>
+                           <Font name="Niramit Regular" size="18.0" />
+                        </font>
+                     </Text>
+                     <StackPane alignment="CENTER_LEFT" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                        <children>
+                           <HBox alignment="CENTER_LEFT" prefHeight="53.0" prefWidth="286.0">
+                              <children>
+                                 <TextField fx:id="eventTimeHour" prefHeight="26.0" prefWidth="64.0">
+                                    <font>
+                                       <Font name="Niramit Regular" size="13.0" />
+                                    </font>
+                                 </TextField>
+                                 <Text fx:id="eventTimeColon" strokeType="OUTSIDE" strokeWidth="0.0" text=" :" wrappingWidth="14.851999998092651">
+                                    <font>
+                                       <Font name="Niramit Regular" size="18.0" />
+                                    </font>
+                                 </Text>
+                                 <TextField fx:id="eventTimeMinutes" prefHeight="30.0" prefWidth="68.0">
+                                    <padding>
+                                       <Insets left="10.0" />
+                                    </padding>
+                                    <font>
+                                       <Font name="Niramit Regular" size="13.0" />
+                                    </font>
+                                 </TextField>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text=" " wrappingWidth="14.851999998092651">
+                                    <font>
+                                       <Font name="Niramit Regular" size="18.0" />
+                                    </font>
+                                 </Text>
+                                 <SplitMenuButton fx:id="amPmSelector" mnemonicParsing="false" text="Choose...">
+                                   <items>
+                                     <MenuItem fx:id="amMenuItem" mnemonicParsing="false" text="AM" />
+                                     <MenuItem fx:id="pmMenuItem" mnemonicParsing="false" text="PM" />
+                                   </items>
+                                    <font>
+                                       <Font name="Niramit Regular" size="13.0" />
+                                    </font>
+                                 </SplitMenuButton>
+                              </children>
+                           </HBox>
+                           <Label fx:id="startTimeView" text="Label">
+                              <font>
+                                 <Font name="Niramit Regular" size="18.0" />
+                              </font>
+                           </Label>
+                        </children>
+                     </StackPane>
+                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Duration: " GridPane.rowIndex="3">
+                        <font>
+                           <Font name="Niramit Regular" size="18.0" />
+                        </font>
+                     </Text>
+                     <StackPane alignment="CENTER_LEFT" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                        <children>
+                           <HBox fx:id="durationBox" alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="228.0">
+                              <children>
+                                 <TextField fx:id="eventDurationHour" prefHeight="26.0" prefWidth="43.0">
+                                    <font>
+                                       <Font name="Niramit Regular" size="13.0" />
+                                    </font>
+                                 </TextField>
+                                 <Text fx:id="hourLabel" strokeType="OUTSIDE" strokeWidth="0.0" text="hr" wrappingWidth="18.85199999809265">
+                                    <font>
+                                       <Font name="Niramit Regular" size="18.0" />
+                                    </font>
+                                    <HBox.margin>
+                                       <Insets left="5.0" right="5.0" />
+                                    </HBox.margin>
+                                 </Text>
+                                 <TextField fx:id="eventDurationMinutes" prefHeight="26.0" prefWidth="46.0">
+                                    <padding>
+                                       <Insets left="10.0" right="5.0" />
+                                    </padding>
+                                    <font>
+                                       <Font name="Niramit Regular" size="13.0" />
+                                    </font>
+                                 </TextField>
+                                 <Text fx:id="minutesLabel" strokeType="OUTSIDE" strokeWidth="0.0" text="mins" wrappingWidth="42.85199999809265">
+                                    <font>
+                                       <Font name="Niramit Regular" size="18.0" />
+                                    </font>
+                                    <HBox.margin>
+                                       <Insets left="5.0" />
+                                    </HBox.margin>
+                                 </Text>
+                              </children>
+                           </HBox>
+                           <Label fx:id="eventDurationView" text="Label">
+                              <font>
+                                 <Font name="Niramit Regular" size="18.0" />
+                              </font>
+                           </Label>
+                        </children>
+                     </StackPane>
+                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Description: " GridPane.rowIndex="4" GridPane.valignment="TOP">
+                        <font>
+                           <Font name="Niramit Regular" size="18.0" />
+                        </font>
+                        <GridPane.margin>
+                           <Insets top="10.0" />
+                        </GridPane.margin>
+                     </Text>
+                     <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                        <children>
+                           <ScrollPane fx:id="eventDescriptionScrollPane" hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0">
+                              <content>
+                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="214.0">
+                                    <children>
+                                       <TextFlow fx:id="eventDescriptionView" prefHeight="134.0" prefWidth="214.0" />
+                                    </children>
+                                 </AnchorPane>
+                              </content>
+                           </ScrollPane>
+                           <TextArea fx:id="eventDescriptionField" prefHeight="127.0" prefWidth="200.0" wrapText="true">
+                              <font>
+                                 <Font name="Niramit Regular" size="13.0" />
+                              </font>
+                           </TextArea>
+                        </children>
+                        <GridPane.margin>
+                           <Insets right="10.0" top="10.0" />
+                        </GridPane.margin>
+                     </StackPane>
+                  </children>
+                  <padding>
+                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                  </padding>
+               </GridPane>
+            </center>
+            <bottom>
+               <ButtonBar prefHeight="41.0" prefWidth="384.0" BorderPane.alignment="CENTER">
+                 <buttons>
+                   <Button fx:id="eventEditButton" mnemonicParsing="false" style="-fx-background-color: #9DBEBB;" text="Edit" textFill="WHITE">
+                        <font>
+                           <Font name="Niramit Regular" size="13.0" />
+                        </font>
+                     </Button>
+                     <Button fx:id="eventSaveButton" mnemonicParsing="false" style="-fx-background-color: #9DBEBB;" text="Save" textFill="WHITE">
+                        <font>
+                           <Font name="Niramit Regular" size="13.0" />
+                        </font>
+                     </Button>
+                     <Button fx:id="eventDeleteButton" mnemonicParsing="false" style="-fx-background-color: #9DBEBB;" text="Delete" textFill="WHITE">
+                        <font>
+                           <Font name="Niramit Regular" size="13.0" />
+                        </font>
+                     </Button>
+                 </buttons>
+                  <padding>
+                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                  </padding>
+               </ButtonBar>
+            </bottom>
+         </BorderPane>
+      </children></AnchorPane>
+</Scene>

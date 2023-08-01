@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Scene?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Scene xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <AnchorPane prefHeight="800.0" prefWidth="1350.0">
+      <children>
+         <BorderPane prefHeight="800.0" prefWidth="1350.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <top>
+               <MenuBar prefHeight="28.0" prefWidth="616.0" BorderPane.alignment="CENTER">
+                 <menus>
+                   <Menu mnemonicParsing="false" text="File">
+                     <items>
+                           <MenuItem fx:id="newFileMenuItem" mnemonicParsing="false" text="New" />
+                           <MenuItem fx:id="openFileMenuItem" mnemonicParsing="false" text="Open" />
+                       <MenuItem fx:id="saveFileMenuItem" mnemonicParsing="false" text="Save" />
+                           <MenuItem fx:id="saveFileAsMenuItem" mnemonicParsing="false" text="Save As..." />
+                     </items>
+                   </Menu>
+                   <Menu mnemonicParsing="false" text="Insert">
+                     <items>
+                       <MenuItem fx:id="newTaskMenuItem" mnemonicParsing="false" text="Task" />
+                           <MenuItem fx:id="newEventMenuItem" mnemonicParsing="false" text="Event" />
+                     </items>
+                   </Menu>
+                     <Menu mnemonicParsing="false" text="Edit">
+                       <items>
+                         <MenuItem fx:id="editWeekParamsMenuItem" mnemonicParsing="false" text="Week Properties" />
+                       </items>
+                     </Menu>
+                     <Menu mnemonicParsing="false" text="Help">
+                        <items>
+                           <MenuItem fx:id="shortcutsMenuItem" mnemonicParsing="false" text="Shortcuts" />
+                        </items>
+                     </Menu>
+                 </menus>
+               </MenuBar>
+            </top>
+            <right>
+               <VBox prefHeight="746.0" prefWidth="252.0" style="-fx-border-color: #e0d7dc; -fx-border-width: 3; -fx-border-radius: 0;" BorderPane.alignment="CENTER">
+                  <children>
+                     <Label alignment="CENTER" prefHeight="55.0" prefWidth="246.0" style="-fx-background-color: #ad786a; -fx-background-radius: 0;" text="Task Bar" textFill="WHITE">
+                        <font>
+                           <Font name="Niramit Regular" size="18.0" />
+                        </font>
+                     </Label>
+                     <ProgressBar fx:id="progressBar" prefHeight="30.0" prefWidth="262.0" progress="0.0" style="-fx-accent: #D5B9B2;" />
+                     <VBox fx:id="taskbar" prefHeight="679.0" prefWidth="242.0" style="-fx-background-color: #f9f1f1;">
+                        <children>
+                           <HBox alignment="TOP_RIGHT" prefHeight="26.0" prefWidth="246.0">
+                              <children>
+                                 <Text fill="#909090" strokeType="OUTSIDE" strokeWidth="0.0" text="Tasks complete:">
+                                    <HBox.margin>
+                                       <Insets right="5.0" />
+                                    </HBox.margin>
+                                    <font>
+                                       <Font name="Niramit Regular" size="13.0" />
+                                    </font>
+                                 </Text>
+                                 <Text fx:id="taskCompleteNumber" fill="#909090" strokeType="OUTSIDE" strokeWidth="0.0">
+                                    <font>
+                                       <Font name="Niramit Regular" size="13.0" />
+                                    </font>
+                                    <HBox.margin>
+                                       <Insets right="7.0" />
+                                    </HBox.margin>
+                                 </Text>
+                              </children>
+                           </HBox>
+                        </children>
+                     </VBox>
+                  </children>
+               </VBox>
+            </right>
+            <center>
+               <VBox prefHeight="717.0" prefWidth="1098.0" style="-fx-border-color: #e0d7dc; -fx-border-width: 3;" BorderPane.alignment="CENTER">
+                  <children>
+                     <GridPane prefHeight="735.0" prefWidth="1098.0">
+                       <columnConstraints>
+                           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                       </columnConstraints>
+                       <rowConstraints>
+                         <RowConstraints maxHeight="350.0" minHeight="55.0" prefHeight="55.0" vgrow="SOMETIMES" />
+                           <RowConstraints maxHeight="350.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                         <RowConstraints maxHeight="670.1020202636719" minHeight="10.0" prefHeight="649.6957931518555" vgrow="SOMETIMES" />
+                       </rowConstraints>
+                        <children>
+                           <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="61.0" prefWidth="227.0" style="-fx-border-color: #d1e8eb; -fx-background-color: #6b9c6e;" text="Sunday" textAlignment="CENTER" textFill="WHITE">
+                              <font>
+                                 <Font name="Niramit Regular" size="18.0" />
+                              </font>
+                           </Label>
+                           <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="61.0" prefWidth="283.0" style="-fx-border-color: #d1e8eb; -fx-background-color: #6b9c6e;" text="Monday" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1">
+                              <font>
+                                 <Font name="Niramit Regular" size="18.0" />
+                              </font>
+                           </Label>
+                           <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="61.0" prefWidth="297.0" style="-fx-border-color: #d1e8eb; -fx-background-color: #6b9c6e;" text="Tuesday" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="2">
+                              <font>
+                                 <Font name="Niramit Regular" size="18.0" />
+                              </font>
+                           </Label>
+                           <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="61.0" prefWidth="311.0" style="-fx-border-color: #d1e8eb; -fx-background-color: #6b9c6e;" text="Wednesday" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="3">
+                              <font>
+                                 <Font name="Niramit Regular" size="18.0" />
+                              </font>
+                           </Label>
+                           <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="61.0" prefWidth="267.0" style="-fx-border-color: #d1e8eb; -fx-background-color: #6b9c6e;" text="Thursday" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="4">
+                              <font>
+                                 <Font name="Niramit Regular" size="18.0" />
+                              </font>
+                           </Label>
+                           <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="61.0" prefWidth="235.0" style="-fx-border-color: #d1e8eb; -fx-background-color: #6b9c6e;" text="Friday" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="5">
+                              <font>
+                                 <Font name="Niramit Regular" size="18.0" />
+                              </font>
+                           </Label>
+                           <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="61.0" prefWidth="220.0" style="-fx-border-color: #d1e8eb; -fx-background-color: #6b9c6e;" text="Saturday" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="6">
+                              <font>
+                                 <Font name="Niramit Regular" size="18.0" />
+                              </font>
+                           </Label>
+                           <Label fx:id="sundayCommitment" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #A0CA92; -fx-border-color: #d1e8eb;" textFill="WHITE" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+                              <font>
+                                 <Font name="Niramit Regular" size="15.0" />
+                              </font>
+                           </Label>
+                           <Label fx:id="mondayCommitment" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #A0CA92; -fx-border-color: #d1e8eb;" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                              <font>
+                                 <Font name="Niramit Regular" size="15.0" />
+                              </font>
+                           </Label>
+                           <Label fx:id="tuesdayCommitment" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #A0CA92; -fx-border-color: #d1e8eb;" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                              <font>
+                                 <Font name="Niramit Regular" size="15.0" />
+                              </font>
+                           </Label>
+                           <Label fx:id="wednesdayCommitment" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #A0CA92; -fx-border-color: #d1e8eb;" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                              <font>
+                                 <Font name="Niramit Regular" size="15.0" />
+                              </font>
+                           </Label>
+                           <Label fx:id="thursdayCommitment" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #A0CA92; -fx-border-color: #d1e8eb;" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                              <font>
+                                 <Font name="Niramit Regular" size="15.0" />
+                              </font>
+                           </Label>
+                           <Label fx:id="fridayCommitment" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #A0CA92; -fx-border-color: #d1e8eb;" textFill="WHITE" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                              <font>
+                                 <Font name="Niramit Regular" size="15.0" />
+                              </font>
+                           </Label>
+                           <Label fx:id="saturdayCommitment" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #A0CA92; -fx-border-color: #d1e8eb;" textFill="WHITE" GridPane.columnIndex="6" GridPane.rowIndex="1">
+                              <font>
+                                 <Font name="Niramit Regular" size="15.0" />
+                              </font>
+                           </Label>
+                           <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" pannable="true" prefHeight="200.0" vbarPolicy="NEVER" GridPane.rowIndex="2">
+                             <content>
+                               <AnchorPane maxWidth="1.7976931348623157E308" style="-fx-background-color: #F6EEE3;">
+                                    <children>
+                                       <VBox fx:id="sundayBar" spacing="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                          <padding>
+                                             <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                          </padding></VBox>
+                                    </children>
+                                 </AnchorPane>
+                             </content>
+                           </ScrollPane>
+                           <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" pannable="true" prefHeight="200.0" vbarPolicy="NEVER" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                              <content>
+                                 <AnchorPane maxWidth="1.7976931348623157E308" style="-fx-background-color: #F6EEE3;">
+                                    <children>
+                                       <VBox fx:id="mondayBar" spacing="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                          <padding>
+                                             <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                          </padding>
+                                       </VBox>
+                                    </children>
+                                 </AnchorPane>
+                              </content>
+                           </ScrollPane>
+                           <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" pannable="true" prefHeight="200.0" vbarPolicy="NEVER" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                              <content>
+                                 <AnchorPane maxWidth="1.7976931348623157E308" style="-fx-background-color: #F6EEE3;">
+                                    <children>
+                                       <VBox fx:id="tuesdayBar" spacing="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                          <padding>
+                                             <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                          </padding>
+                                       </VBox>
+                                    </children>
+                                 </AnchorPane>
+                              </content>
+                           </ScrollPane>
+                           <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" pannable="true" prefHeight="200.0" vbarPolicy="NEVER" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                              <content>
+                                 <AnchorPane maxWidth="1.7976931348623157E308" style="-fx-background-color: #F6EEE3;">
+                                    <children>
+                                       <VBox fx:id="wednesdayBar" spacing="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                          <padding>
+                                             <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                          </padding>
+                                       </VBox>
+                                    </children>
+                                 </AnchorPane>
+                              </content>
+                           </ScrollPane>
+                           <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" pannable="true" prefHeight="200.0" vbarPolicy="NEVER" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                              <content>
+                                 <AnchorPane maxWidth="1.7976931348623157E308" style="-fx-background-color: #F6EEE3;">
+                                    <children>
+                                       <VBox fx:id="thursdayBar" spacing="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                          <padding>
+                                             <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                          </padding>
+                                       </VBox>
+                                    </children>
+                                 </AnchorPane>
+                              </content>
+                           </ScrollPane>
+                           <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" pannable="true" prefHeight="200.0" vbarPolicy="NEVER" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                              <content>
+                                 <AnchorPane maxWidth="1.7976931348623157E308" style="-fx-background-color: #F6EEE3;">
+                                    <children>
+                                       <VBox fx:id="fridayBar" spacing="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                          <padding>
+                                             <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                          </padding>
+                                       </VBox>
+                                    </children>
+                                 </AnchorPane>
+                              </content>
+                           </ScrollPane>
+                           <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" pannable="true" prefHeight="200.0" vbarPolicy="NEVER" GridPane.columnIndex="6" GridPane.rowIndex="2">
+                              <content>
+                                 <AnchorPane maxWidth="1.7976931348623157E308" style="-fx-background-color: #F6EEE3;">
+                                    <children>
+                                       <VBox fx:id="saturdayBar" spacing="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                          <padding>
+                                             <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                          </padding>
+                                       </VBox>
+                                    </children>
+                                 </AnchorPane>
+                              </content>
+                           </ScrollPane>
+                        </children>
+                     </GridPane>
+                     <HBox prefHeight="42.0" prefWidth="1098.0" style="-fx-background-color: #dbd1b4;">
+                        <children>
+                           <Label fx:id="weekName" prefHeight="75.0" prefWidth="717.0">
+                              <font>
+                                 <Font name="Niramit Regular" size="25.0" />
+                              </font>
+                              <padding>
+                                 <Insets left="10.0" />
+                              </padding>
+                           </Label>
+                           <Button fx:id="saveFileButton" alignment="CENTER" mnemonicParsing="false" prefHeight="42.0" prefWidth="174.0" style="-fx-background-color: #F6EEE3; -fx-border-color: #FFFFFF; -fx-border-width: 3; -fx-border-radius: 10; -fx-background-radius: 10;" text="Save File" textAlignment="CENTER">
+                              <font>
+                                 <Font name="Niramit Regular" size="16.0" />
+                              </font>
+                              <HBox.margin>
+                                 <Insets left="5.0" right="5.0" />
+                              </HBox.margin>
+                           </Button>
+                           <Button fx:id="addEventButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="42.0" prefWidth="164.0" style="-fx-background-color: #F6EEE3; -fx-border-color: #FFFFFF; -fx-border-width: 3; -fx-border-radius: 10; -fx-background-radius: 10;" text="Add Event" textAlignment="CENTER">
+                              <font>
+                                 <Font name="Niramit Regular" size="16.0" />
+                              </font>
+                              <HBox.margin>
+                                 <Insets left="5.0" right="5.0" />
+                              </HBox.margin>
+                           </Button>
+                           <Button fx:id="addTaskButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="42.0" prefWidth="164.0" style="-fx-background-color: #F6EEE3; -fx-border-color: #FFFFFF; -fx-border-width: 3; -fx-border-radius: 10; -fx-background-radius: 10;" text="Add Task" textAlignment="CENTER">
+                              <font>
+                                 <Font name="Niramit Regular" size="16.0" />
+                              </font>
+                              <HBox.margin>
+                                 <Insets left="5.0" />
+                              </HBox.margin>
+                           </Button>
+                        </children>
+                        <VBox.margin>
+                           <Insets />
+                        </VBox.margin>
+                        <padding>
+                           <Insets bottom="5.0" left="5.0" right="5.0" top="8.0" />
+                        </padding>
+                     </HBox>
+                  </children>
+               </VBox>
+            </center>
+         </BorderPane>
+      </children></AnchorPane>
+</Scene>
